@@ -19,9 +19,8 @@ for (i in 1:length(t_file)){
 }
 
 #Add a project member
-m <- a$project(dx_pid)$member_add(username = "yuankun")
-a$project(dx_pi$member()
-
+m <- a$project(id = "dangxiao/dx-test")$member_add(username = "yuankun")
+a$project(id = "dangxiao/dx-test")$member()
 #########done
 
 #notice: It's not a good idea to embedded everything into one line  ---- write clean code
