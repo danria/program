@@ -8,12 +8,12 @@ source <- a$project(id = "yuankun/bgi-practise-source")
 target <- a$project(id = "yuankun/bgi-practise-target")
 t_file <- target$file(complete = TRUE)
 dx_pid <- a$project(id = "dangxiao/dx-test")$id
-# Method 1£º----using copyFile
+# Method 1: ----using copyFile
 for (i in 1:length(t_file)){
   source_fid<-source$file(name=t_file[[i]]$name, exact = TRUE)$id
   a$copyFile(source_fid,dx_pid)
 }
-# Method 2£º----using copyTo
+# Method 2: ----using copyTo
 for (i in 1:length(t_file)){
   source$file(name=t_file[[i]]$name, exact = TRUE)$copyTo(dx_pid)
 }
@@ -24,9 +24,9 @@ a$project(dx_pi$member()
 
 #########done
 
-#notice £ºIt's not a good idea to embedded everything into one line  ---- write clean code
+#notice: It's not a good idea to embedded everything into one line  ---- write clean code
 for (i in 1:length(target$file(complete = TRUE))){
-  a$project(id = "yuankun/bgi-practise-target")$file(id = target$file()[[i]]$id£¬complete = TRUE)$copyTo(a$project(id="dangxiao/dx-test")$id)
+  a$project(id = "yuankun/bgi-practise-target")$file(id = target$file()[[i]]$id, complete = TRUE)$copyTo(a$project(id="dangxiao/dx-test")$id)
 }
 #The above codes have a bug
 #modification
